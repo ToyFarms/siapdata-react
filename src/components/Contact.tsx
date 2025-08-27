@@ -1,0 +1,20 @@
+export default function Contact() {
+  const hStyle =
+    "scroll-m-20 border-b mb-2 text-lg font-semibold tracking-tight first:mt-0 w-fit";
+  return (
+    <div className="mr-[10rem] flex flex-col gap-4">
+      <div>
+        <h1 className={hStyle}>Location</h1>
+        <p className="text-sm">
+          Jl. Suma, RT.02/RW.02, Majalengka Kulon, Kec. Majalengka, Kabupaten
+          Majalengka, Jawa Barat 45418
+        </p>
+      </div>
+      <div>
+        <h1 className={hStyle}>Contact</h1>
+        <p className="text-sm">satriyo@siapschool.com</p>
+        <p className="text-sm">+6289646544043</p>
+      </div>
+    </div>
+  );
+}
