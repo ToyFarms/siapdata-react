@@ -2,11 +2,13 @@ import Map from "../assets/map-layer.png";
 import Logo from "../assets/logo.png";
 import LinkTop from "./LinkTop";
 import Contact from "./Contact";
-import { pagesLinks } from "./PagesLinks";
+import { useTranslation } from "react-i18next";
+import { pagesLinks } from "@/lib/dataLinks";
 
 export default function Footer() {
   const hStyle =
     "scroll-m-20 border-b mb-2 text-lg font-semibold tracking-tight first:mt-0 w-fit";
+  const { t } = useTranslation();
 
   return (
     <div
@@ -22,11 +24,11 @@ export default function Footer() {
           <img className="hidden sm:block max-w-[12rem]" src={Logo} />
         </div>
         <div className="flex-1">
-          <p className={hStyle}>Links</p>
+          <p className={hStyle}>{t("foot.links")}</p>
           <ul className="flex flex-3 flex-col">
             {pagesLinks.map((p) => (
               <li key={p.to + p.label}>
-                <LinkTop to={p.to}>{p.label}</LinkTop>
+                <LinkTop to={p.to}>{t(p.labelKey)}</LinkTop>
               </li>
             ))}
           </ul>

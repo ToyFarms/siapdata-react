@@ -10,6 +10,7 @@ import Faq from "@/components/Faq";
 import { Separator } from "@/components/ui/separator";
 import Testmonials from "@/components/Testmonials";
 import Screenshots from "./Screenshots";
+import { useTranslation } from "react-i18next";
 
 function Image() {
   const controls = useAnimation();
@@ -65,6 +66,8 @@ function Image() {
 }
 
 function Hero() {
+  const { t } = useTranslation();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 w-full h-[calc(100vh-6rem)]">
       <img
@@ -76,13 +79,10 @@ function Hero() {
           Siap Data
         </p>
         <p className="font-hero bg-gradient-to-b text-transparent from-sky-50 to-sky-200 bg-clip-text text-[2rem] xl:text-[3rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
-          The Future of Data Management.
+          {t("hero.title")}
         </p>
         <p className="text-white text-justify [text-align-last:center] md:[text-align-last:left] mx-20 md:ml-[5rem] lg:mr-20 mt-[3rem] text-md">
-          Simplify your HR operations with Siap Data! a comprehensive HRMS/HRIS
-          application. Suitable for small to large companies, this application
-          helps HR teams record attendance, manage employee data, calculate
-          salaries, manage leave and permits, and generate real-time reports.
+          {t("hero.desc")}
         </p>
         <div className="flex gap-4 md:ml-20 mt-10 lg:mt-20 self-center md:self-start">
           <a
@@ -90,14 +90,14 @@ function Hero() {
             target="_blank"
           >
             <Button className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer">
-              Download
+              {t("download")}
             </Button>
           </a>
           <Button
             variant="secondary"
             className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer"
           >
-            Learn More
+            {t("learn-more")}
           </Button>
         </div>
       </div>
@@ -109,21 +109,29 @@ function Hero() {
 }
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div>
       <Hero />
       <div className="mt-[5rem]">
         <Separator className="mt-10 mb-24" />
-        <h1 className="text-center text-5xl font-hero mb-20">Key Features</h1>
+        <h1 className="text-center text-5xl font-hero mb-20">
+          {t("key-features")}
+        </h1>
         <FeatureList />
         <Separator className="mt-10 mb-24" />
-        <h1 className="text-center text-5xl font-hero mb-20">Screenshots</h1>
+        <h1 className="text-center text-5xl font-hero mb-20">
+          {t("screenshots")}
+        </h1>
         <Screenshots />
         <Separator className="mt-10 mb-24" />
-        <h1 className="text-center text-5xl font-hero mb-20">Testmonials</h1>
+        <h1 className="text-center text-5xl font-hero mb-20">
+          {t("testmonials")}
+        </h1>
         <Testmonials />
         <Separator className="mt-10 mb-24" />
-        <Faq heading="Frequently asked questions" />
+        <h1 className="text-center text-5xl font-hero mb-20">{t("faq")}</h1>
+        <Faq />
         <Separator className="mt-10 mb-24" />
       </div>
     </div>

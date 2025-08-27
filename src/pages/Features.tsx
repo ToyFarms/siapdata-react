@@ -1,4 +1,4 @@
-import { features } from "@/lib/features";
+import { features } from "@/lib/dataFeatures";
 
 import Sc1 from "../assets/sc1.png";
 import Sc2 from "../assets/sc2.png";
@@ -39,6 +39,7 @@ export function FeatureDescription({ description }: { description: string }) {
 }
 import { useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Features() {
   const hStyle =
@@ -47,6 +48,7 @@ export default function Features() {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 900px)" });
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBack = useCallback(() => {
     if (window.history.length > 1) {
@@ -74,17 +76,17 @@ export default function Features() {
               <img
                 className="min-w-[15rem] rounded-xl"
                 src={screenshots[i % screenshots.length]}
-                alt={`${f.title} screenshot`}
+                alt={`${t(f.titleKey)} screenshot`}
               />
             </div>
 
             <div className="flex flex-2 flex-col m-8 lg:m-24">
-              <h1 className={hStyle}>{f.title}</h1>
+              <h1 className={hStyle}>{t(f.titleKey)}</h1>
 
               {isDesktopOrLaptop ? (
-                <p>{f.depth}</p>
+                <p>{t(f.depthKey)}</p>
               ) : (
-                <FeatureDescription description={f.depth} />
+                <FeatureDescription description={t(f.depthKey)} />
               )}
             </div>
           </div>
@@ -96,7 +98,7 @@ export default function Features() {
           onClick={handleBack}
           className="fixed z-50 bottom-4 right-4 md:bottom-8 md:right-8 inline-flex items-center gap-2 px-4 py-2 rounded-full shadow-lg backdrop-blur-sm text-sm hover:shadow-xl active:scale-95 transition-transform animate-pulse cursor-pointer"
         >
-          ← Back
+          ← {t("back")}
         </Button>
       ) : null}
     </div>

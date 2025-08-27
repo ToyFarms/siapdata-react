@@ -10,13 +10,17 @@ import { useMediaQuery } from "react-responsive";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
-import { pagesLinks } from "./PagesLinks";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import { pagesLinks } from "@/lib/dataLinks";
 
 function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
-  const textColorClass = textBlack ? "text-black" : "text-white";
-  const borderClass = textBlack ? "border-b-black/15" : "border-b-white/15";
-
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
+
+  const textColorClass = textBlack && !scrolled ? "text-black" : "text-white";
+  const borderClass =
+    textBlack && !scrolled ? "border-b-black/15" : "border-b-white/15";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +58,7 @@ function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
                   end={p.end}
                   className="px-4 py-2 rounded transition-colors font-medium text-current !text-lg"
                 >
-                  {p.label}
+                  {t(p.labelKey)}
                 </NavLink>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -62,10 +66,11 @@ function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div>
+      <div className="flex gap-5 items-center">
         <Button className="px-8 !text-md rounded-lg cursor-pointer">
-          SIGN UP
+          {t("sign-up")}
         </Button>
+        <LanguageSwitcher />
       </div>
     </div>
   );
@@ -73,6 +78,7 @@ function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
 
 function MobileNavbar({ textBlack }: { textBlack: boolean }) {
   const textColorClass = textBlack ? "text-black" : "text-white";
+  const { t } = useTranslation();
 
   return (
     <div className={`w-full flex justify-between px-5 pt-2 ${textColorClass}`}>
@@ -83,10 +89,11 @@ function MobileNavbar({ textBlack }: { textBlack: boolean }) {
       />
 
       <div className="flex flex-row items-center gap-10">
-        <div>
+        <div className="flex gap-5 items-center">
           <Button className="px-8 !text-md rounded-lg cursor-pointer">
-            SIGN UP
+            {t("sign-up")}
           </Button>
+          <LanguageSwitcher />
         </div>
         <Sheet>
           <SheetTrigger className="cursor-pointer">

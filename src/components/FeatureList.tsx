@@ -6,14 +6,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { features } from "../lib/features";
+import { features } from "../lib/dataFeatures";
 import { useMediaQuery } from "react-responsive";
 import FeatureCarousel from "@/components/FeatureCarousel";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function FeatureList() {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 900px)" });
   const location = useLocation();
+  const { t } = useTranslation();
 
   return isDesktopOrLaptop ? (
     <div className="w-full px-10 mt-10">
@@ -31,8 +33,8 @@ export default function FeatureList() {
             >
               <Card className="min-w-[20rem]">
                 <CardHeader>
-                  <CardTitle>{f.title}</CardTitle>
-                  <CardDescription>{f.description}</CardDescription>
+                  <CardTitle>{t(f.titleKey)}</CardTitle>
+                  <CardDescription>{t(f.descriptionKey)}</CardDescription>
                   <CardAction>{f.icon}</CardAction>
                 </CardHeader>
               </Card>
