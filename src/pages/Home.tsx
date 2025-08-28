@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import Testmonials from "@/components/Testmonials";
 import Screenshots from "./Screenshots";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Image() {
   const controls = useAnimation();
@@ -93,12 +94,14 @@ function Hero() {
               {t("download")}
             </Button>
           </a>
-          <Button
-            variant="secondary"
-            className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer"
-          >
-            {t("learn-more")}
-          </Button>
+          <Link to={{ pathname: "/about" }}>
+            <Button
+              variant="secondary"
+              className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer"
+            >
+              {t("learn-more")}
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="relative hidden md:flex items-center justify-center max-w-[38rem] ml-[5rem]">
