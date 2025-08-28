@@ -35,7 +35,7 @@ export default function Testmonials() {
               <CardContent className="min-h-[12rem]">
                 <p>{t(ts.reviewKey)}</p>
               </CardContent>
-              <CardFooter className="flex gap-8">
+              <CardFooter className="flex gap-8 min-h-18">
                 <Avatar className="w-12 h-12">
                   <AvatarImage src={ts.author.avatar} />
                 </Avatar>
