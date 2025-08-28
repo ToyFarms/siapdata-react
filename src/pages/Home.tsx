@@ -12,6 +12,8 @@ import Testmonials from "@/components/Testmonials";
 import Screenshots from "./Screenshots";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
+import LinkTop from "@/components/LinkTop";
 
 function Image() {
   const controls = useAnimation();
@@ -113,6 +115,7 @@ function Hero() {
 
 export default function Home() {
   const { t } = useTranslation();
+
   return (
     <div>
       <Hero />
@@ -136,6 +139,12 @@ export default function Home() {
         <h1 className="text-center text-5xl font-hero mb-20">{t("faq")}</h1>
         <Faq />
         <Separator className="mt-10 mb-24" />
+
+        <div className="w-full flex justify-center mb-24">
+          <LinkTop to={{ pathname: "/about" }} className="flex gap-4">
+            <p className="underline">{t("hero.learn-app")}</p>
+          </LinkTop>
+        </div>
       </div>
     </div>
   );

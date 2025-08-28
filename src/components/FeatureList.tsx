@@ -40,7 +40,9 @@ export default function FeatureList() {
                   <CardAction>{f.icon}</CardAction>
                 </CardHeader>
                 <CardFooter className="flex gap-2 justify-end">
-                  <p className="text-sm text-gray-500 underline">More info</p>
+                  <p className="text-sm text-gray-500 underline">
+                    {t("more-info")}
+                  </p>
                   <ExternalLink size={18} />
                 </CardFooter>
               </Card>

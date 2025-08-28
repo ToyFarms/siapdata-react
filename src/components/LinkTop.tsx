@@ -7,11 +7,13 @@ interface SmartLinkProps extends LinkProps {
 export default function LinkTop({ to, children, ...rest }: SmartLinkProps) {
   const location = useLocation();
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (_: React.MouseEvent<HTMLAnchorElement>) => {
     const targetPath = typeof to === "string" ? to : to.pathname;
+    if (targetPath) {
+      sessionStorage.setItem(targetPath, "0");
+    }
 
     if (location.pathname === targetPath) {
-      e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };

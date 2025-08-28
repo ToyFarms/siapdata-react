@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <div
       id="footer"
-      className="relative overflow-hidden flex flex-col justify-between items-center bg-gradient-to-br from-primary to-blue-500 text-white min-h-[10rem] z-[-2]"
+      className="relative overflow-hidden flex flex-col justify-between items-center bg-gradient-to-br from-primary to-blue-500 text-white min-h-[10rem]"
     >
       <img
         className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-overlay pointer-events-none z-10"
