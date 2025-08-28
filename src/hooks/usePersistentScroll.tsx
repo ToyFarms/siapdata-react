@@ -6,9 +6,11 @@ export function usePersistentScroll() {
   const scrollRef = useRef(0);
 
   useLayoutEffect(() => {
-    const saved = sessionStorage.getItem(loc.pathname);
-    const pos = saved ? Number(saved) : 0;
-    window.scrollTo(0, pos);
+    if (loc.hash === "") {
+      const saved = sessionStorage.getItem(loc.pathname);
+      const pos = saved ? Number(saved) : 0;
+      window.scrollTo(0, pos);
+    }
   }, [loc.pathname]);
 
   useEffect(() => {

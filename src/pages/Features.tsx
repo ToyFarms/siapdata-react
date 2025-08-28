@@ -7,7 +7,7 @@ import Sc4 from "../assets/sc4.png";
 import Sc5 from "../assets/sc5.png";
 const screenshots = [Sc1, Sc2, Sc3, Sc4, Sc5];
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -37,7 +37,6 @@ export function FeatureDescription({ description }: { description: string }) {
     </Collapsible>
   );
 }
-import { useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -50,7 +49,20 @@ export default function Features() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const handleBack = useCallback(() => {
+  useEffect(() => {
+    if (location.state?.fromIndex !== undefined) {
+      const featureIndex = location.state.fromIndex;
+      const featureId = features[featureIndex]?.title
+        .replaceAll(" ", "-")
+        .toLowerCase();
+      const element = document.getElementById(featureId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  }, [location.state]);
+
+  const handleBack = () => {
     if (window.history.length > 1) {
       navigate(-1);
     } else if (location.state?.from) {
@@ -58,7 +70,7 @@ export default function Features() {
     } else {
       navigate("/");
     }
-  }, [navigate, location.state]);
+  };
 
   return (
     <div className="p-8 lg:p-24">
@@ -72,7 +84,7 @@ export default function Features() {
               i % 2 === 1 ? "flex-row-reverse" : "flex-row"
             } relative`}
           >
-            <div className="flex-1 hidden sm:block ">
+            <div className="flex-1 hidden sm:block">
               <img
                 className="min-w-[15rem] rounded-xl"
                 src={screenshots[i % screenshots.length]}

@@ -48,7 +48,9 @@ export default function FeatureCarousel() {
                 <Card>
                   <CardHeader>
                     <CardTitle>{t(f.titleKey)}</CardTitle>
-                    <CardDescription>{t(f.descriptionKey)}</CardDescription>
+                    <CardDescription className="min-h-18">
+                      {t(f.descriptionKey)}
+                    </CardDescription>
                     <CardAction>{f.icon}</CardAction>
                   </CardHeader>
                   <CardFooter className="flex gap-2 justify-end">
