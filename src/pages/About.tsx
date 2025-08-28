@@ -1,7 +1,6 @@
 import FeatureCarousel from "@/components/FeatureCarousel";
 import LinkTop from "@/components/LinkTop";
 import ScreenshotCarousel from "@/components/ScreenshotCarousel";
-import { ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
