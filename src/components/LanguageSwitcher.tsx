@@ -44,9 +44,9 @@ export default function LanguageSwitcher() {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
-            className={`cursor-pointer ${currentLang === lang.code ? "bg-accent" : ""}`}
+            className={`cursor-pointer ${currentLang === lang.code ? "!bg-primary !text-white" : ""}`}
           >
-            <p className="hover:bg-slate-300 w-full p-2">{lang.name}</p>
+            <p className="hover:underline w-full p-2">{lang.name}</p>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

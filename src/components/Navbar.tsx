@@ -13,6 +13,7 @@ import { MenuIcon } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { pagesLinks } from "@/lib/dataLinks";
+import useScrollHide from "@/hooks/useScrollHide";
 
 function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -77,21 +78,34 @@ function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
 }
 
 function MobileNavbar({ textBlack }: { textBlack: boolean }) {
-  const textColorClass = textBlack ? "text-black" : "text-white";
+  const { scrolled, hidden } = useScrollHide({
+    shrinkThreshold: 50,
+    upTolerance: 10,
+    hideAfter: 100,
+  });
   const { t } = useTranslation();
 
+  const textColorClass = textBlack && !scrolled ? "text-black" : "text-white";
+  const borderClass =
+    textBlack && !scrolled ? "border-b-black/15" : "border-b-white/15";
+
   return (
-    <div className={`w-full flex justify-between px-5 pt-2 ${textColorClass}`}>
+    <div
+      className={`sticky top-0 z-50 transform transition-transform duration-300 min-w-full
+        ${hidden ? "-translate-y-full" : "translate-y-0"}
+        ${scrolled ? "h-15 bg-black/20 backdrop-blur-sm" : "h-20 bg-transparent"}
+        flex justify-between items-center px-5 pt-2 ${borderClass} ${textColorClass}`}
+    >
       <img
         src="logo.png"
         alt="logo"
-        className="transition-all duration-300 ml-2 lg:ml-5 xl:ml-20 mr-2 lg:mr-1 xl:mr-15 max-w-[60px] h-auto"
+        className={`transition-all duration-300 ml-2 mr-2 max-w-[60px] h-auto ${
+          scrolled ? "max-w-[44px]" : "max-w-[60px]"
+        }`}
       />
 
-      <div className="flex flex-row items-center gap-10">
-        <div className="flex gap-5 items-center">
-          <LanguageSwitcher />
-        </div>
+      <div className="flex flex-row items-center gap-4">
+        <LanguageSwitcher />
         <Sheet>
           <SheetTrigger className="cursor-pointer">
             <MenuIcon size={36} className="text-current" />

@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
-export function useWindowScrollPersistence() {
+export function usePersistentScroll() {
   const loc = useLocation();
   const scrollRef = useRef(0);
 
