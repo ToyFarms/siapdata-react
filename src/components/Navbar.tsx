@@ -67,10 +67,10 @@ function DesktopNavbar({ textBlack }: { textBlack: boolean }) {
       </NavigationMenu>
 
       <div className="flex gap-5 items-center">
+        <LanguageSwitcher />
         <Button className="px-8 !text-md rounded-lg cursor-pointer">
           {t("sign-up")}
         </Button>
-        <LanguageSwitcher />
       </div>
     </div>
   );
