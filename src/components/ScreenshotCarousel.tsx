@@ -27,7 +27,7 @@ export default function ScreenshotCarousel() {
     >
       <CarouselContent>
         {screenshots.map((s) => (
-          <CarouselItem key={s} className="basis-1/3">
+          <CarouselItem key={s} className="basis-1/1 sm:basis-1/2 lg:basis-1/3">
             <img src={s} />
           </CarouselItem>
         ))}

@@ -76,13 +76,13 @@ function Hero() {
         className="absolute z-[-1] h-[103vh] translate-y-[-6rem] w-auto object-cover hue-rotate-[-20deg]"
       />
       <div className="flex flex-col h-full items-center justify-center">
-        <p className="font-hero text-white text-[4rem] xl:text-[6rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
+        <p className="font-hero text-white text-[4rem] md:text-[5rem] xl:text-[6rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
           Siap Data
         </p>
-        <p className="font-hero bg-gradient-to-b text-transparent from-sky-50 to-sky-200 bg-clip-text text-[2rem] xl:text-[3rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
+        <p className="font-hero bg-gradient-to-b text-transparent from-sky-50 to-sky-200 bg-clip-text text-[1.5rem] md:text-[1.8rem] lg:text-[2.5rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
           {t("hero.title")}
         </p>
-        <p className="text-white text-justify [text-align-last:center] md:[text-align-last:left] mx-20 md:ml-[5rem] lg:mr-20 mt-[3rem] text-md">
+        <p className="text-white text-justify [text-align-last:center] md:[text-align-last:left] mx-10 md:mx-20 md:ml-[5rem] lg:mr-20 mt-[3rem] text-md">
           {t("hero.desc")}
         </p>
         <div className="flex gap-4 md:ml-20 mt-10 lg:mt-20 self-center md:self-start">
@@ -90,14 +90,14 @@ function Hero() {
             href="https://play.google.com/store/apps/details?id=com.app.siap.data"
             target="_blank"
           >
-            <Button className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer">
+            <Button className="text-sm md:text-xl px-5 md:px-10 pt-6 pb-6 md:pt-8 md:pb-8 rounded-xl cursor-pointer">
               {t("download")}
             </Button>
           </a>
           <Link to={{ pathname: "/about" }}>
             <Button
               variant="secondary"
-              className="text-xl px-10 pt-8 pb-8 rounded-xl cursor-pointer"
+              className="text-sm md:text-xl px-5 md:px-10 pt-6 pb-6 md:pt-8 md:pb-8 rounded-xl cursor-pointer"
             >
               {t("learn-more")}
             </Button>

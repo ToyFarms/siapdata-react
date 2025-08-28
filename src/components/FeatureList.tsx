@@ -2,6 +2,7 @@ import {
   Card,
   CardAction,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -11,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import FeatureCarousel from "@/components/FeatureCarousel";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ExternalLink } from "lucide-react";
 
 export default function FeatureList() {
   const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 900px)" });
@@ -37,6 +39,10 @@ export default function FeatureList() {
                   <CardDescription>{t(f.descriptionKey)}</CardDescription>
                   <CardAction>{f.icon}</CardAction>
                 </CardHeader>
+                <CardFooter className="flex gap-2 justify-end">
+                  <p className="text-sm text-gray-500 underline">More info</p>
+                  <ExternalLink size={18} />
+                </CardFooter>
               </Card>
             </Link>
           );

@@ -1,4 +1,3 @@
-import { useMediaQuery } from "react-responsive";
 import { Card, CardContent, CardFooter } from "./ui/card";
 import {
   Carousel,
@@ -12,29 +11,29 @@ import Autoplay from "embla-carousel-autoplay";
 import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 import { testmonials } from "@/lib/dataTestmonials";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "react-responsive";
 
 export default function Testmonials() {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 900px)",
-  });
-
   const { t } = useTranslation();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 500px)",
+  });
 
   return (
     <Carousel
-      className="mx-24"
+      className="mx-2 min-[500px]:mx-16 lg:mx-24"
       opts={{ loop: true }}
       plugins={[Autoplay({ delay: 5000 }), WheelGesturesPlugin()]}
     >
-      <CarouselContent className="flex">
+      <CarouselContent className="flex min-w-[24rem]">
         {testmonials.map((ts) => (
           <CarouselItem
             key={ts.review}
-            className={isDesktopOrLaptop ? "basis-1/3" : "basis-1/1"}
+            className="basis-1/1 md:basis-1/2 lg:basis-1/3"
           >
             <Card>
               <CardContent className="min-h-[12rem]">
-                {t(ts.reviewKey)}
+                <p>{t(ts.reviewKey)}</p>
               </CardContent>
               <CardFooter className="flex gap-8">
                 <Avatar className="w-12 h-12">
@@ -49,8 +48,12 @@ export default function Testmonials() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselNext />
-      <CarouselPrevious />
+      {isDesktopOrLaptop ? (
+        <>
+          <CarouselNext />
+          <CarouselPrevious />
+        </>
+      ) : null}
     </Carousel>
   );
 }

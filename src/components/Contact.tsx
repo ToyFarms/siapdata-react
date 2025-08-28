@@ -6,7 +6,7 @@ export default function Contact() {
   const { t } = useTranslation();
 
   return (
-    <div className="mr-[10rem] flex flex-col gap-4">
+    <div className="max-w-48 flex flex-col gap-4">
       <div>
         <h1 className={hStyle}>{t("foot.location")}</h1>
         <p className="text-sm">

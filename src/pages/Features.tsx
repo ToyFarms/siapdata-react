@@ -72,7 +72,7 @@ export default function Features() {
               i % 2 === 1 ? "flex-row-reverse" : "flex-row"
             } relative`}
           >
-            <div className="flex-1">
+            <div className="flex-1 hidden sm:block ">
               <img
                 className="min-w-[15rem] rounded-xl"
                 src={screenshots[i % screenshots.length]}
@@ -82,12 +82,7 @@ export default function Features() {
 
             <div className="flex flex-2 flex-col m-8 lg:m-24">
               <h1 className={hStyle}>{t(f.titleKey)}</h1>
-
-              {isDesktopOrLaptop ? (
-                <p>{t(f.depthKey)}</p>
-              ) : (
-                <FeatureDescription description={t(f.depthKey)} />
-              )}
+              <p>{t(f.depthKey)}</p>
             </div>
           </div>
         </div>

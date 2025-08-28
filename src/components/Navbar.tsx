@@ -90,9 +90,6 @@ function MobileNavbar({ textBlack }: { textBlack: boolean }) {
 
       <div className="flex flex-row items-center gap-10">
         <div className="flex gap-5 items-center">
-          <Button className="px-8 !text-md rounded-lg cursor-pointer">
-            {t("sign-up")}
-          </Button>
           <LanguageSwitcher />
         </div>
         <Sheet>
@@ -113,6 +110,9 @@ function MobileNavbar({ textBlack }: { textBlack: boolean }) {
                     {p.label}
                   </NavLink>
                 ))}
+                <Button className="ml-6 px-8 !text-md rounded-lg cursor-pointer">
+                  {t("sign-up")}
+                </Button>
               </NavigationMenuList>
             </NavigationMenu>
           </SheetContent>

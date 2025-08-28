@@ -20,10 +20,10 @@ export default function Footer() {
         src={Map}
       />
       <div className="flex justify-center items-center w-full">
-        <div className="flex-1 ml-15 mt-15">
-          <img className="hidden sm:block max-w-[12rem]" src={Logo} />
+        <div className="flex-1 sm:mx-8 sm:mt-15 px-8">
+          <img className="sm:max-w-48" src={Logo} />
         </div>
-        <div className="flex-1">
+        <div className="hidden sm:block flex-1">
           <p className={hStyle}>{t("foot.links")}</p>
           <ul className="flex flex-3 flex-col">
             {pagesLinks.map((p) => (
@@ -33,11 +33,11 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="flex-2">
+        <div className="flex justify-center sm:justify-start flex-2 mt-12 mb-12">
           <Contact />
         </div>
       </div>
-      <p className="pt-5 pb-5 w-full text-center text-md border-t border-t-white/20">
+      <p className="pt-5 pb-5 w-full text-center text-sm sm:text-md border-t border-t-white/20">
         Copyright ©2025 SiapData by PT. Fokus Solusi Teknologi. All Rights
         Reserved.
       </p>
