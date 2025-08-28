@@ -14,7 +14,7 @@ import {
   CollapsibleTrigger,
   CollapsibleContent,
 } from "@/components/ui/collapsible";
-import { ArrowLeft, ChevronsUpDown, MoveLeft } from "lucide-react";
+import { ArrowLeft, ChevronsUpDown } from "lucide-react";
 import { useMediaQuery } from "react-responsive";
 import { Separator } from "@/components/ui/separator";
 
