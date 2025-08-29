@@ -11,8 +11,8 @@ import { Separator } from "@/components/ui/separator";
 import Testmonials from "@/components/Testmonials";
 import Screenshots from "./Screenshots";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import LinkTop from "@/components/LinkTop";
+import Squares from "@/components/ui/Squares";
 
 function Image() {
   const controls = useAnimation();
@@ -72,9 +72,17 @@ function Hero() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 w-full h-[calc(100vh-6rem)]">
+      <Squares
+        speed={0.1}
+        squareSize={60}
+        direction="diagonal"
+        borderColor="#FFFFFF10"
+        hoverFillColor="#222"
+        className="absolute inset-0 z-[-1]"
+      />
       <img
         src={HomeBackground}
-        className="absolute z-[-1] h-[103vh] translate-y-[-6rem] w-auto object-cover hue-rotate-[-20deg]"
+        className="absolute z-[-2] h-[103vh] translate-y-[-6rem] w-auto object-cover hue-rotate-[-20deg]"
       />
       <div className="flex flex-col h-full items-center justify-center">
         <p className="font-hero text-white text-[4rem] md:text-[5rem] xl:text-[6rem] text-balance leading-none text-center md:text-left md:ml-[5rem] md:self-start">
@@ -95,14 +103,12 @@ function Hero() {
               {t("download")}
             </Button>
           </a>
-          <Link to={{ pathname: "/about" }}>
-            <Button
-              variant="secondary"
-              className="text-sm md:text-xl px-5 md:px-10 pt-6 pb-6 md:pt-8 md:pb-8 rounded-xl cursor-pointer"
-            >
-              {t("learn-more")}
-            </Button>
-          </Link>
+          <Button
+            variant="secondary"
+            className="text-black text-sm md:text-xl px-5 md:px-10 pt-6 pb-6 md:pt-8 md:pb-8 rounded-xl cursor-pointer"
+          >
+            <LinkTop to={{ pathname: "/about" }}>{t("learn-more")}</LinkTop>
+          </Button>
         </div>
       </div>
       <div className="relative hidden md:flex items-center justify-center max-w-[38rem] ml-[5rem]">
@@ -141,7 +147,7 @@ export default function Home() {
 
         <div className="w-full flex justify-center mb-24">
           <LinkTop to={{ pathname: "/about" }} className="flex gap-4">
-            <p className="underline">{t("hero.learn-app")}</p>
+            {t("hero.learn-app")}
           </LinkTop>
         </div>
       </div>

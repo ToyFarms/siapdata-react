@@ -14,6 +14,7 @@
   "nav.home": "Home",
   "nav.about": "About",
   "nav.features": "Features",
+  "nav.pricing": "Pricing",
   "sign-up": "Sign Up",
   "key-features": "Key Features",
   "screenshots": "Screenshots",
@@ -92,5 +93,11 @@
   "back": "Back",
   "more-info": "More Info",
   "hero.learn-app": "Learn More About the App",
-  "hero.learn-features": "Learn More About the Features"
+  "hero.learn-features": "Learn More About the Features",
+  "pricing.title": "Start Today, Free!",
+  "pricing.desc": "Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.",
+  "pricing.free": "Free",
+  "pricing.free.desc": "Individuals & very small teams",
+  "pricing.free.label": "Get started for free",
+  "pricing.free.features": "Access to core HRMS dashboard\nEmployee directory (up to 5 employees)\nBasic attendance tracking\nStandard reports (PDF/CSV export)\nEmail support"
 }
