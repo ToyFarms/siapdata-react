@@ -114,7 +114,7 @@ function MobileNavbar() {
             scrolled ? "max-w-[44px]" : "max-w-[60px]"
           }`}
         />
-        <p className="text-center mt-auto mb-auto font-hero text-[1.8rem]">
+        <p className="hidden min-[400px]:block text-center mt-auto mb-auto font-hero text-[1.8rem]">
           Siap Data
         </p>
       </LinkTop>
