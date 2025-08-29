@@ -2,7 +2,7 @@ import HeroImage from "../assets/sc5.png";
 import HeroImage2 from "../assets/sc2.png";
 import HeroImage3 from "../assets/sc3.png";
 import HomeBackground from "../assets/home-bg.png";
-import { motion, useAnimation } from "motion/react";
+import { motion as m, useAnimation } from "motion/react";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import FeatureList from "../components/FeatureList";
@@ -24,7 +24,7 @@ function Image() {
   }, [controls]);
   return (
     <>
-      <motion.img
+      <m.img
         src={HeroImage}
         className="w-[70%] rounded-[2rem] absolute origin-bottom"
         initial="hidden"
@@ -47,7 +47,7 @@ function Image() {
         }}
         viewport={{ once: true }}
       />
-      <motion.img
+      <m.img
         initial={{ opacity: 0 }}
         whileInView={{ x: "50%", y: "20%", rotate: "10deg", opacity: 100 }}
         viewport={{ once: true }}
@@ -55,7 +55,7 @@ function Image() {
         src={HeroImage2}
         className="w-[50%] z-[-1] rounded-[2rem] absolute origin-bottom blur-[3px]"
       />
-      <motion.img
+      <m.img
         initial={{ opacity: 0 }}
         whileInView={{ x: "-50%", y: "20%", rotate: "-10deg", opacity: 100 }}
         viewport={{ once: true }}
