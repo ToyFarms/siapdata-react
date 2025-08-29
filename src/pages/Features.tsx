@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/collapsible";
 import { ArrowLeft, ChevronsUpDown } from "lucide-react";
 import { useMediaQuery } from "react-responsive";
-import { Separator } from "@/components/ui/separator";
 
 export function FeatureDescription({ description }: { description: string }) {
   const [open, setOpen] = useState(false);
@@ -40,6 +39,7 @@ export function FeatureDescription({ description }: { description: string }) {
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LinkTop from "@/components/LinkTop";
+import FlowingMenu from "@/components/FlowingMenu";
 
 export default function Features() {
   const hStyle =
@@ -76,12 +76,18 @@ export default function Features() {
   return (
     <div className="p-8 lg:p-24">
       {features.map((f, i) => (
-        <div key={i}>
-          {i !== 0 ? <Separator className="mt-12 mb-12" /> : null}
+        <div key={i} className="relative">
+          {i !== 0 ? <div className="mt-12 mb-12" /> : null}
+
+          <FlowingMenu
+            text={i % 2 === 0 ? "> SIAPDATA >" : "< SIAPDATA <"}
+            className={`hidden sm:block inset-0 top-[-4rem] absolute ${i % 2 === 0 ? "rotate-6" : "rotate-[-6deg]"} select-none text-primary/50 italic h-fit [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%]`}
+            speed={i % 2 === 0 ? -50 : 50}
+          />
 
           <div
             id={f.title.replaceAll(" ", "-").toLowerCase()}
-            className={`flex ${isDesktopOrLaptop ? "items-center" : ""} ${
+            className={`flex ${isDesktopOrLaptop ? "items-center" : "mb-24 mt-24"} ${
               i % 2 === 1 ? "flex-row-reverse" : "flex-row"
             } relative`}
           >
