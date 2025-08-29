@@ -94,5 +94,22 @@
   "more-info": "Selengkapnya",
   "hero.learn-app": "Selanjutnya: Tentang SiapData",
   "hero.learn-features": "Selanjutnya: Fitur",
-  "hero.learn-pricing": "Selanjutnya: Detail Paket"
+  "hero.learn-pricing": "Selanjutnya: Detail Paket",
+  "about.team": "Tim Kami",
+  "pricing.title": "Mulai Sekarang Juga, Gratis!",
+  "pricing.desc": "Dapatkan akses seumur hidup ke semua komponen. Tanpa biaya berlangganan. Harga sederhana dan transparan.",
+  "pricing.free": "Gratis",
+  "pricing.free.desc": "Perorangan & tim kecil",
+  "pricing.free.label": "Mulai secara gratis",
+  "pricing.free.features": "Akses ke dashboard HRMS inti\nDirektori karyawan (maks. 5 karyawan)\nPelacakan absensi dasar\nLaporan standar (ekspor PDF/CSV)\nDukungan via email",
+  "pricing.starter": "Starter",
+  "pricing.starter.desc": "Startup & usaha kecil (hingga 25 karyawan)",
+  "pricing.starter.label": "Mulai Sekarang",
+  "pricing.starter.features": "Proses penggajian (dasar)\nManajemen cuti & ketidakhadiran\nAlur onboarding\nKontrol akses berbasis peran\nDukungan chat & email",
+  "pricing.enterprise": "Enterprise",
+  "pricing.enterprise.desc": "Perusahaan besar (250+ karyawan)",
+  "pricing.enterprise.label": "Mulai Sekarang",
+  "pricing.enterprise.features": "Jumlah karyawan tak terbatas\nDukungan multi-lokasi & multi-mata uang\nAnalitik lanjutan & dasbor BI\nAlur kerja kustom & otomatisasi\nAPI & Single Sign-On (SSO)\nManajer akun khusus\nDukungan premium 24/7",
+  "pricing.permonth": "/ bulan",
+  "pricing.notincluding": "tidak termasuk support"
 }

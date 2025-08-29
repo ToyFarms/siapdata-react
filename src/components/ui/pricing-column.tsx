@@ -6,6 +6,7 @@ import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 import { Button } from "./button";
+import { useTranslation } from "react-i18next";
 
 const pricingColumnVariants = cva(
   "max-w-container relative flex flex-col gap-6 overflow-hidden rounded-2xl p-8 shadow-xl",
@@ -52,6 +53,8 @@ export function PricingColumn({
   className,
   ...props
 }: PricingColumnProps) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={cn(pricingColumnVariants({ variant, className }))}
@@ -73,7 +76,7 @@ export function PricingColumn({
             )}
             {name}
           </h2>
-          <p className="text-muted-foreground max-w-[220px] text-sm">
+          <p className="text-muted-foreground max-w-[220px] min-h-[3rem] text-sm">
             {description}
           </p>
         </div>
@@ -85,15 +88,15 @@ export function PricingColumn({
           <div className="flex min-h-[40px] flex-col">
             {price > 0 && (
               <>
-                <span className="text-sm">one-time payment</span>
+                <span className="text-sm">{t("pricing.permonth")}</span>
                 <span className="text-muted-foreground text-sm">
-                  plus local taxes
+                  {t("pricing.notincluding")}
                 </span>
               </>
             )}
           </div>
         </div>
-        <Button variant={cta.variant} size="lg" asChild>
+        <Button variant="default" size="lg" asChild>
           <Link to={cta.href}>{cta.label}</Link>
         </Button>
         <p className="text-muted-foreground min-h-[40px] max-w-[220px] text-sm">
