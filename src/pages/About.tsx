@@ -1,6 +1,7 @@
 import FeatureCarousel from "@/components/FeatureCarousel";
 import LinkTop from "@/components/LinkTop";
 import ScreenshotCarousel from "@/components/ScreenshotCarousel";
+import Team from "@/components/Team";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
@@ -26,9 +27,7 @@ export default function About() {
         <p className={ansStyle}>{t("about.what.answer")}</p>
       </section>
       <section>
-        <h2 className={`text-center mt-[10rem] mb-10 ${h2Style}`}>
-          {t("key-features")}
-        </h2>
+        <h2 className={`mt-[10rem] mb-10 ${h2Style}`}>{t("key-features")}</h2>
         <FeatureCarousel />
       </section>
       <section>
@@ -38,6 +37,11 @@ export default function About() {
       <section>
         <h2 className={h2Style}>{t("about.mission")}</h2>
         <p className={ansStyle}>{t("about.mission.answer")}</p>
+      </section>
+
+      <section>
+        <h2 className={h2Style}>{t("about.team")}</h2>
+        <Team />
       </section>
 
       <div className="w-full flex justify-center mt-12 mb-24">

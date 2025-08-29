@@ -6,6 +6,7 @@ export default function PricingPage() {
 
   return (
     <Pricing
+      className="mb-24"
       title={t("pricing.title")}
       description={t("pricing.desc")}
       plans={[
