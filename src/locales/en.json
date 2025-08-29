@@ -98,8 +98,17 @@
   "about.team": "Our Team",
   "pricing.title": "Start Today, Free!",
   "pricing.desc": "Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.",
+  
   "pricing.free": "Free",
   "pricing.free.desc": "Individuals & very small teams",
   "pricing.free.label": "Get started for free",
-  "pricing.free.features": "Access to core HRMS dashboard\nEmployee directory (up to 5 employees)\nBasic attendance tracking\nStandard reports (PDF/CSV export)\nEmail support"
+  "pricing.free.features": "Access to core HRMS dashboard\nEmployee directory (up to 5 employees)\nBasic attendance tracking\nStandard reports (PDF/CSV export)\nEmail support",
+  "pricing.starter": "Starter",
+  "pricing.starter.desc": "Startups & small businesses (up to 25 employees)",
+  "pricing.starter.label": "",
+  "pricing.starter.features": "Payroll processing (basic)\nLeave & absence management\nOnboarding workflow\nRole-based access control\nChat & email support",
+  "pricing.enterprise": "Enterprise",
+  "pricing.enterprise.desc": "Enterprises (250+ employees)",
+  "pricing.enterprise.label": "",
+  "pricing.enterprise.features": " Unlimited employees\nMulti-location & multi-currency support/nAdvanced analytics & BI dashboards/nCustom workflows & automations/nAPI & single sign-on (SSO)/nDedicated account manager/n24/7 premium support"
 }
