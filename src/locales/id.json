@@ -14,7 +14,7 @@
   "nav.home": "Beranda",
   "nav.about": "Tentang",
   "nav.features": "Fitur",
-  "nav.pricing": "Harga",
+  "nav.pricing": "Paket",
   "sign-up": "Daftar",
   "key-features": "Fitur Utama",
   "screenshots": "Tangkapan Layar",
@@ -92,6 +92,7 @@
   "foot.contact": "Kontak",
   "back": "Kembali",
   "more-info": "Selengkapnya",
-  "hero.learn-app": "Pelajari Lebih Lanjut Tentang Aplikasi",
-  "hero.learn-features": "Pelajari Lebih Lanjut Tentang Fitur"
+  "hero.learn-app": "Selanjutnya: Tentang SiapData",
+  "hero.learn-features": "Selanjutnya: Fitur",
+  "hero.learn-pricing": "Selanjutnya: Detail Paket"
 }

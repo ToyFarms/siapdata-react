@@ -39,6 +39,7 @@ export function FeatureDescription({ description }: { description: string }) {
 }
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LinkTop from "@/components/LinkTop";
 
 export default function Features() {
   const hStyle =
@@ -99,6 +100,12 @@ export default function Features() {
           </div>
         </div>
       ))}
+
+      <div className="w-full flex justify-center mt-12 mb-24">
+        <LinkTop to={{ pathname: "/pricing" }} className="flex gap-4">
+          <p className="underline">{t("hero.learn-pricing")}</p>
+        </LinkTop>
+      </div>
 
       {location.state?.from ? (
         <Button
