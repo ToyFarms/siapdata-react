@@ -1,5 +1,3 @@
-import FeatureCarousel from "@/components/FeatureCarousel";
-import LinkTop from "@/components/LinkTop";
 import ScreenshotCarousel from "@/components/ScreenshotCarousel";
 import Team from "@/components/Team";
 import { Separator } from "@/components/ui/separator";

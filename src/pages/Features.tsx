@@ -38,7 +38,6 @@ export function FeatureDescription({ description }: { description: string }) {
 }
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LinkTop from "@/components/LinkTop";
 import FlowingMenu from "@/components/FlowingMenu";
 
 export default function Features() {

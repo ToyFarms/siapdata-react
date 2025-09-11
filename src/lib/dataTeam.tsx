@@ -24,6 +24,18 @@ export const team = [
     },
   },
   {
+    name: "Deny Sutrisman",
+    pos: "Account Executive",
+    avatar: "team/deny.webp",
+    posKey: "andres.pos",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
     name: "M. Zein Algifari",
     pos: "Mobile Developer",
     avatar: "team/algi.webp",
