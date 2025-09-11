@@ -1,0 +1,86 @@
+export const team = [
+  {
+    name: "Abdul Aziz",
+    pos: "Project Manager",
+    avatar: "team/aziz.webp",
+    posKey: "aziz.pos",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Krisna Andresta",
+    pos: "Account Executive",
+    avatar: "team/andres.webp",
+    posKey: "andres.pos",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "M. Zein Algifari",
+    pos: "Mobile Developer",
+    avatar: "team/algi.webp",
+    posKey: "algi.key",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "M. Ayip Rosidi",
+    pos: "Head Design Division",
+    avatar: "team/ayip.webp",
+    posKey: "ayip.key",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "Rizki Sastriyo",
+    pos: "Head Programming Division",
+    avatar: "team/rizki.webp",
+    posKey: "rizki.key",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "M. Salman Alfarisi",
+    pos: "Programming Division",
+    avatar: "team/salman.webp",
+    posKey: "salman.key",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+  {
+    name: "M. Yuda Eka P",
+    pos: "Programming Division",
+    avatar: "team/yuda.webp",
+    posKey: "yuda.key",
+    social: {
+      linkedIn: "#",
+      instagram: "#",
+      facebook: "#",
+      twitter: "#",
+    },
+  },
+];
